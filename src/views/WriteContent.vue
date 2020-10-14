@@ -35,6 +35,12 @@ export default {
   methods: {
     onSelectMenu(selectedMenu) {
       this.currentComponent = selectedMenu;
+      if (this.currentComponent === "MyContent") {
+        this.$router.push("/my");
+      }
+      if (this.currentComponent === "CreationContent") {
+        this.$router.push("/creation");
+      }
     },
     onClickPreview(previewType) {
       this.$refs.currentComponent.preview();

@@ -22,10 +22,14 @@ export default {
       currentComponent: "HomeContent",
     };
   },
-  created() {
-    this.$router.push({
-      name: this.currentComponent,
-    });
+  watch: {
+    $route(to, from) {
+      if (to.path === "/") {
+        this.$router.push({
+          name: this.currentComponent,
+        });
+      }
+    },
   },
   methods: {
     onSelectMenu(selectedMenu) {
