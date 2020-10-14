@@ -77,6 +77,9 @@ export default {
     close() {
       this.visible = false;
     },
+    changeSelectedKey(selectedKey) {
+      this.selectedKeys[0] = selectedKey;
+    },
     onSelect(selected) {
       this.selectedKeys[0] = selected.key;
       this.$emit("selectMenu", this.selectedKeys[0]);

@@ -1,10 +1,7 @@
 <template>
   <a-card hoverable :bodyStyle="{ textAlign: 'left', padding: '0' }">
     <template v-slot:cover>
-      <img
-        alt="example"
-        src="https://desk-fd.zol-img.com.cn/g2/M00/0A/07/ChMlWl7MlGaIFWqbABCdcTo-UEkAAPe8AGqUoMAEJ2J441.jpg"
-      />
+      <img alt="example" src="../assets/bg-profile.jpg" />
     </template>
     <div class="card-body">
       <img

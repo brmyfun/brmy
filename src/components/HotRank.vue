@@ -1,5 +1,5 @@
 <template>
-  <div class="rank ant-card-bordered">
+  <div class="rank ant-card-bordered" v-if="hotList">
     <div class="rank-title">
       <h4 style="margin-block: 0">实时热榜</h4>
       <a href="#"><span>更多</span></a>
@@ -24,7 +24,7 @@ export default {
   name: "HotRank",
   data() {
     return {
-      hotList: [],
+      hotList: null,
     };
   },
   mounted() {
@@ -33,7 +33,9 @@ export default {
       type: "top",
     })
       .then((res) => {
-        this.hotList = res.result.data.slice(0, 10);
+        if (res.result) {
+          this.hotList = res.result.data.slice(0, 10);
+        }
       })
       .catch((err) => {
         console.log(err);
