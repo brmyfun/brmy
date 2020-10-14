@@ -1,9 +1,9 @@
 <template>
   <a-row id="nav" type="flex" align="middle">
     <a-col :span="4" align="right">
-      <a href="/" id="logo">
+      <router-link to="/home">
         <img src="../assets/logo.png" height="36" alt="logo" />
-      </a>
+      </router-link>
     </a-col>
     <a-col :span="1"></a-col>
     <a-col :span="6" align="left">
