@@ -22,6 +22,12 @@
           <HotRank></HotRank>
         </a-col>
       </a-row>
+
+      <a-row>
+        <a-col>
+          <div class="wechat"></div>
+        </a-col>
+      </a-row>
     </a-col>
     <a-col :span="4"></a-col>
   </a-row>
@@ -75,5 +81,16 @@ export default {
 <style scoped>
 .sider-row {
   margin-bottom: 12px;
+}
+
+.wechat {
+  color: #428077;
+  background: #d8ebe4
+    url(https://gw.alipayobjects.com/zos/basement_prod/6cdd01ca-008e-47f9-a72e-710402ab4589.svg)
+    100% 100% no-repeat;
+  border-radius: 4px;
+  padding: 12px;
+  margin-left: 12px;
+  height: 120px;
 }
 </style>

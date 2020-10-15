@@ -34,7 +34,7 @@ export default {
     })
       .then((res) => {
         if (res.result) {
-          this.hotList = res.result.data.slice(0, 10);
+          this.hotList = res.result.data.slice(0, 5);
         }
       })
       .catch((err) => {
