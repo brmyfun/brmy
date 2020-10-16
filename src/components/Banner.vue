@@ -50,6 +50,7 @@ export default {
   min-height: 290px;
   object-fit: cover;
   border-radius: 4px;
+  cursor: pointer;
 
   z-index: -10;
 }

@@ -2,7 +2,7 @@
   <div class="rank ant-card-bordered" v-if="hotList">
     <div class="rank-title">
       <h4 style="margin-block: 0">实时热榜</h4>
-      <a href="#"><span>更多</span></a>
+      <a href="javascript:void(0);"><span>更多</span></a>
     </div>
 
     <div class="hot-item">

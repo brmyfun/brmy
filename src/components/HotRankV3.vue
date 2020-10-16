@@ -8,16 +8,43 @@
     <div class="hot-item">
       <ul>
         <li v-for="(hotItem, index) in hotList" :key="hotItem.uniquekey">
-          <div>
-            <span class="hot-index">{{ index + 1 }}</span>
+          <div class="first-item" v-if="index == 0">
+            <img :src="hotItem.thumbnail_pic_s" />
+            <div style="display: flex">
+              <div>
+                <span class="hot-index">{{ index + 1 }}</span>
+              </div>
+              <div>
+                <p class="overflow-single" style="width: 320px">
+                  <a :href="hotItem.url" target="_blank" :title="hotItem.title">
+                    {{ hotItem.title }}
+                  </a>
+                </p>
+                <p class="hot-footer">
+                  <span>来自</span> {{ hotItem.author_name }}
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p class="overflow-single">
-              <a :href="hotItem.url" target="_blank">{{ hotItem.title }}</a>
-            </p>
-            <p class="hot-footer">
-              <span>来自</span> {{ hotItem.author_name }}
-            </p>
+
+          <div class="last-item" v-else>
+            <div>
+              <span class="hot-index">{{ index + 1 }}</span>
+            </div>
+            <div>
+              <p class="overflow-single" style="width: 255px">
+                <a :href="hotItem.url" target="_blank" :title="hotItem.title">
+                  {{ hotItem.title }}
+                </a>
+              </p>
+              <p class="hot-footer">
+                <span>来自</span> {{ hotItem.author_name }}
+              </p>
+            </div>
+
+            <div class="hot-cover">
+              <img :src="hotItem.thumbnail_pic_s" />
+            </div>
           </div>
         </li>
       </ul>
@@ -90,7 +117,7 @@ const hotList = [
 ];
 
 export default {
-  name: "HotRankV1",
+  name: "HotRankV3",
   data() {
     return {
       hotList: hotList,
@@ -145,8 +172,10 @@ export default {
 
 .hot-item ul li {
   border-top: 1px solid #ebebeb;
+}
 
-  display: flex;
+.hot-item ul li:first {
+  border-top: 0;
 }
 
 .hot-item a {
@@ -158,6 +187,27 @@ export default {
   color: #0084ff;
 }
 
+.first-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 150px;
+  border-radius: 3px;
+}
+
+.last-item {
+  display: flex;
+}
+
+.hot-cover {
+  padding: 12px 0;
+}
+
+.hot-cover img {
+  max-height: 52px;
+  border-radius: 3px;
+}
+
 .hot-footer {
   font-size: 12px;
   font-weight: 200;
@@ -165,7 +215,6 @@ export default {
   margin: 0;
   padding: 0 0 12px 0;
   line-height: 20px;
-
   cursor: pointer;
 }
 
@@ -174,11 +223,10 @@ export default {
 }
 
 .overflow-single {
-  width: 290px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   margin-bottom: 0;
+  font-size: 13px;
 }
 </style>
