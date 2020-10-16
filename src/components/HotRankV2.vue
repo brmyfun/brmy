@@ -13,11 +13,17 @@
           </div>
           <div>
             <p class="overflow-single">
-              <a :href="hotItem.url" target="_blank">{{ hotItem.title }}</a>
+              <a :href="hotItem.url" target="_blank" :title="hotItem.title">
+                {{ hotItem.title }}
+              </a>
             </p>
             <p class="hot-footer">
               <span>来自</span> {{ hotItem.author_name }}
             </p>
+          </div>
+
+          <div class="hot-cover">
+            <img :src="hotItem.thumbnail_pic_s" />
           </div>
         </li>
       </ul>
@@ -90,7 +96,7 @@ const hotList = [
 ];
 
 export default {
-  name: "HotRankV1",
+  name: "HotRankV2",
   data() {
     return {
       hotList: hotList,
@@ -145,7 +151,6 @@ export default {
 
 .hot-item ul li {
   border-top: 1px solid #ebebeb;
-
   display: flex;
 }
 
@@ -158,6 +163,15 @@ export default {
   color: #0084ff;
 }
 
+.hot-cover {
+  padding: 12px 0;
+}
+
+.hot-cover img {
+  max-height: 52px;
+  border-radius: 3px;
+}
+
 .hot-footer {
   font-size: 12px;
   font-weight: 200;
@@ -165,7 +179,6 @@ export default {
   margin: 0;
   padding: 0 0 12px 0;
   line-height: 20px;
-
   cursor: pointer;
 }
 
@@ -174,11 +187,11 @@ export default {
 }
 
 .overflow-single {
-  width: 290px;
+  width: 220px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   margin-bottom: 0;
+  font-size: 13px;
 }
 </style>
