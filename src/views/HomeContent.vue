@@ -19,7 +19,7 @@
 
       <a-row class="sider-row">
         <a-col>
-          <HotRank></HotRank>
+          <HotRankV1></HotRankV1>
         </a-col>
       </a-row>
 
@@ -36,14 +36,14 @@
 import BlogCard from "../components/BlogCard.vue";
 import ToolBox from "../components/ToolBox.vue";
 import MyBox from "../components/MyBox.vue";
-import HotRank from "../components/HotRank.vue";
+import HotRankV1 from "../components/HotRankV1.vue";
 export default {
   name: "HomeContent",
   components: {
     BlogCard,
     ToolBox,
     MyBox,
-    HotRank,
+    HotRankV1,
   },
   data() {
     return {
