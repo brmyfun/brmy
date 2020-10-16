@@ -73,7 +73,7 @@ export default {
 
 <style scoped>
 .ant-card {
-  margin-bottom: 12px;
+  margin: 12px 0;
 }
 
 .blog-card {

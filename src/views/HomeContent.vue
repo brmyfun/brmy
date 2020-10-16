@@ -1,7 +1,8 @@
 <template>
   <a-row>
-    <a-col :span="5"></a-col>
-    <a-col :span="10">
+    <a-col :span="4"></a-col>
+    <a-col :span="11">
+      <Banner />
       <BlogCard :articles="articles"></BlogCard>
     </a-col>
     <a-col :span="5">
@@ -33,6 +34,7 @@
   </a-row>
 </template>
 <script>
+import Banner from "../components/Banner.vue";
 import BlogCard from "../components/BlogCard.vue";
 import ToolBox from "../components/ToolBox.vue";
 import MyBox from "../components/MyBox.vue";
@@ -40,6 +42,7 @@ import HotRankV1 from "../components/HotRankV1.vue";
 export default {
   name: "HomeContent",
   components: {
+    Banner,
     BlogCard,
     ToolBox,
     MyBox,
