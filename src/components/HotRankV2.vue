@@ -13,11 +13,14 @@
               <span class="hot-index">{{ index + 1 }}</span>
             </a-col>
             <a-col :span="18">
-              <p class="overflow-single">
-                <a :href="hotItem.url" target="_blank" :title="hotItem.title">
-                  {{ hotItem.title }}
-                </a>
-              </p>
+              <a
+                class="overflow-single"
+                :href="hotItem.url"
+                target="_blank"
+                :title="hotItem.title"
+              >
+                {{ hotItem.title }}
+              </a>
               <p class="hot-footer">
                 <span>来自</span> {{ hotItem.author_name }}
               </p>
@@ -157,6 +160,7 @@ export default {
 }
 
 .hot-item a {
+  display: block;
   color: #444444;
   text-decoration: none;
 }
