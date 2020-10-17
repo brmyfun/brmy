@@ -191,6 +191,7 @@ export default {
 
 .hot-item a {
   display: block;
+  max-width: 240px;
   color: #444444;
   text-decoration: none;
 }
