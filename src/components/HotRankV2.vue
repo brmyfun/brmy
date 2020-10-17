@@ -156,12 +156,11 @@ export default {
 
 .hot-item ul li {
   border-top: 1px solid #ebebeb;
-  display: flex;
 }
 
 .hot-item a {
   display: block;
-  max-width: 240px;
+  /* max-width: 240px; */
   color: #444444;
   text-decoration: none;
 }
