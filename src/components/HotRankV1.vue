@@ -8,17 +8,21 @@
     <div class="hot-item">
       <ul>
         <li v-for="(hotItem, index) in hotList" :key="hotItem.uniquekey">
-          <div>
-            <span class="hot-index">{{ index + 1 }}</span>
-          </div>
-          <div>
-            <p class="overflow-single">
-              <a :href="hotItem.url" target="_blank">{{ hotItem.title }}</a>
-            </p>
-            <p class="hot-footer">
-              <span>来自</span> {{ hotItem.author_name }}
-            </p>
-          </div>
+          <a-row>
+            <a-col :span="1">
+              <span class="hot-index">{{ index + 1 }}</span>
+            </a-col>
+            <a-col :span="23">
+              <p class="overflow-single">
+                <a :href="hotItem.url" target="_blank" :title="hotItem.title">{{
+                  hotItem.title
+                }}</a>
+              </p>
+              <p class="hot-footer">
+                <span>来自</span> {{ hotItem.author_name }}
+              </p>
+            </a-col>
+          </a-row>
         </li>
       </ul>
     </div>
@@ -132,7 +136,6 @@ export default {
 .hot-index {
   font-size: 16px;
   font-weight: 700;
-  margin-right: 8px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -145,7 +148,6 @@ export default {
 
 .hot-item ul li {
   border-top: 1px solid #ebebeb;
-
   display: flex;
 }
 
@@ -165,7 +167,6 @@ export default {
   margin: 0;
   padding: 0 0 12px 0;
   line-height: 20px;
-
   cursor: pointer;
 }
 
@@ -174,11 +175,10 @@ export default {
 }
 
 .overflow-single {
-  width: 290px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   margin-bottom: 0;
+  font-size: 13px;
 }
 </style>

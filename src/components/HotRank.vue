@@ -8,10 +8,16 @@
     <div class="hot-item">
       <ul>
         <li v-for="(hotItem, index) in hotList" :key="hotItem.uniquekey">
-          <p class="overflow-single">
-            <span class="hot-index">{{ index + 1 }}</span>
-            <a :href="hotItem.url" target="_blank">{{ hotItem.title }}</a>
-          </p>
+          <a-row>
+            <a-col>
+              <p class="overflow-single">
+                <span class="hot-index">{{ index + 1 }}</span>
+                <a :href="hotItem.url" target="_blank" :title="hotItem.title">{{
+                  hotItem.title
+                }}</a>
+              </p>
+            </a-col>
+          </a-row>
         </li>
       </ul>
     </div>
@@ -102,11 +108,10 @@ export default {
 }
 
 .overflow-single {
-  width: 320px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   margin-bottom: 0;
+  font-size: 13px;
 }
 </style>

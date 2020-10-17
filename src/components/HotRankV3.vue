@@ -9,12 +9,17 @@
       <ul>
         <li v-for="(hotItem, index) in hotList" :key="hotItem.uniquekey">
           <div class="first-item" v-if="index == 0">
-            <img :src="hotItem.thumbnail_pic_s" />
-            <div style="display: flex">
-              <div>
+            <a-row>
+              <a-col>
+                <img :src="hotItem.thumbnail_pic_s" />
+              </a-col>
+            </a-row>
+
+            <a-row>
+              <a-col :span="1">
                 <span class="hot-index">{{ index + 1 }}</span>
-              </div>
-              <div>
+              </a-col>
+              <a-col :span="23">
                 <p class="overflow-single" style="width: 320px">
                   <a :href="hotItem.url" target="_blank" :title="hotItem.title">
                     {{ hotItem.title }}
@@ -23,28 +28,32 @@
                 <p class="hot-footer">
                   <span>来自</span> {{ hotItem.author_name }}
                 </p>
-              </div>
-            </div>
+              </a-col>
+            </a-row>
           </div>
 
           <div class="last-item" v-else>
-            <div>
-              <span class="hot-index">{{ index + 1 }}</span>
-            </div>
-            <div>
-              <p class="overflow-single" style="width: 255px">
-                <a :href="hotItem.url" target="_blank" :title="hotItem.title">
-                  {{ hotItem.title }}
-                </a>
-              </p>
-              <p class="hot-footer">
-                <span>来自</span> {{ hotItem.author_name }}
-              </p>
-            </div>
+            <a-row>
+              <a-col :span="1">
+                <span class="hot-index">{{ index + 1 }}</span>
+              </a-col>
+              <a-col :span="18">
+                <p class="overflow-single" style="width: 255px">
+                  <a :href="hotItem.url" target="_blank" :title="hotItem.title">
+                    {{ hotItem.title }}
+                  </a>
+                </p>
+                <p class="hot-footer">
+                  <span>来自</span> {{ hotItem.author_name }}
+                </p>
+              </a-col>
 
-            <div class="hot-cover">
-              <img :src="hotItem.thumbnail_pic_s" />
-            </div>
+              <a-col :span="5">
+                <div class="hot-cover">
+                  <img :src="hotItem.thumbnail_pic_s" />
+                </div>
+              </a-col>
+            </a-row>
           </div>
         </li>
       </ul>
@@ -159,7 +168,6 @@ export default {
 .hot-index {
   font-size: 16px;
   font-weight: 700;
-  margin-right: 8px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -204,7 +212,10 @@ export default {
 }
 
 .hot-cover img {
-  max-height: 52px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 56px;
   border-radius: 3px;
 }
 
