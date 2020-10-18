@@ -1,10 +1,15 @@
 export default {
     // vite使用koa-proxies进行代理
     proxy: {
-        '/api': {
+        '/api/juhe': {
             target: 'http://v.juhe.cn/',
             changeOrigin: true,
-            rewrite: path => path.replace(/^\/api/, '')
+            rewrite: path => path.replace(/^\/api\/juhe/, '')
+        },
+        '/api/tophub': {
+            target: 'https://www.tophub.fun:8888/',
+            changeOrigin: true,
+            rewrite: path => path.replace(/^\/api\/tophub/, '')
         }
     }
 }
