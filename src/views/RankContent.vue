@@ -31,12 +31,14 @@
             >收起<UpOutlined
           /></a-button>
           <div class="tab-tag">
-            <a-button
-              v-for="(item, index) in allTypes[activeTabKey]"
-              :key="index"
+            <div
+              v-for="tag in allTypes[activeTabKey]"
+              :key="tag.id"
+              :class="{ active: tag.id == activeTagId }"
+              @click="onTagClick(tag)"
             >
-              <TagOutlined /> {{ item.name }}
-            </a-button>
+              <TagOutlined /> <span>{{ tag.name }}</span>
+            </div>
           </div>
         </div>
       </a-card>
@@ -60,6 +62,7 @@ export default {
       tabList: [],
       activeTabKey: null,
       tagExpand: true,
+      activeTagId: null,
     };
   },
   mounted() {
@@ -77,6 +80,7 @@ export default {
             return b.length - a.length;
           });
           this.activeTabKey = this.tabList[0].key;
+          this.activeTagId = res.Data[this.activeTabKey][0].id;
           this.allTypes = res.Data;
         }
       })
@@ -88,9 +92,13 @@ export default {
     onTabChange(key) {
       console.log(key);
       this.activeTabKey = key;
+      this.activeTagId = this.allTypes[key][0].id;
     },
     changeExpand() {
       this.tagExpand = !this.tagExpand;
+    },
+    onTagClick(tag) {
+      this.activeTagId = tag.id;
     },
   },
 };
@@ -106,9 +114,25 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding: 0 24px;
+  margin-bottom: 8px;
 }
 
-.tab-tag .ant-btn {
+.tab-tag div {
+  padding: 4px 8px;
   margin: 8px 8px 0 0;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.tab-tag div:hover {
+  color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.tab-tag .active {
+  color: #40a9ff;
+  border-color: #40a9ff;
+  background: #e6f7ff;
 }
 </style>
