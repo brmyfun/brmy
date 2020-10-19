@@ -9,3 +9,7 @@ export const hotRank = (params) => {
 export const hotRankType = () => {
     return fetch("/tophub/GetAllType");
 }
+
+export const hotRankList = (params) => {
+    return fetch("/tophub/v2/GetAllInfoGzip", params);
+}

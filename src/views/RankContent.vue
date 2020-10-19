@@ -47,7 +47,7 @@
   </a-row>
 </template>
 <script>
-import { hotRank, hotRankType } from "../api/api";
+import { hotRank, hotRankList, hotRankType } from "../api/api";
 import { DownOutlined, UpOutlined, TagOutlined } from "@ant-design/icons-vue";
 export default {
   name: "RankContent",
@@ -87,6 +87,21 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+  },
+  watch: {
+    activeTagId(newVal, oldVal) {
+      console.log(newVal);
+      hotRankList({
+        id: newVal,
+        page: 0,
+      })
+        .then((res) => {
+          console.log(res.Data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
   methods: {
     onTabChange(key) {
