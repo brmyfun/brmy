@@ -15,7 +15,7 @@
           v-if="allTypes[activeTabKey]"
         >
           <a-button
-            style="float: right; margin-top: 12px"
+            style="float: right; margin-top: 16px"
             size="small"
             type="link"
             v-if="tagExpand"
@@ -23,7 +23,7 @@
             >展开<DownOutlined
           /></a-button>
           <a-button
-            style="float: right; margin-top: 12px"
+            style="float: right; margin-top: 16px"
             size="small"
             type="link"
             v-if="!tagExpand"
@@ -116,7 +116,7 @@ export default {
 
 <style scoped>
 .tab-content {
-  height: 48px;
+  height: 56px;
   overflow: hidden;
 }
 
@@ -124,12 +124,12 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding: 0 24px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .tab-tag div {
   padding: 4px 8px;
-  margin: 8px 8px 0 0;
+  margin: 12px 8px 0 0;
   border: 1px solid #d9d9d9;
   cursor: pointer;
   border-radius: 2px;
