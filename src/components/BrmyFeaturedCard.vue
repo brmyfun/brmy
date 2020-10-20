@@ -32,7 +32,7 @@
   </a-card>
 </template>
 <script>
-import { UserOutlined } from "@ant-design/icons-vue";
+import { UserOutlined, TagOutlined } from "@ant-design/icons-vue";
 export default {
   name: "BrmyFeaturedCard",
   props: {
@@ -45,6 +45,7 @@ export default {
   },
   components: {
     UserOutlined,
+    TagOutlined,
   },
 };
 </script>
