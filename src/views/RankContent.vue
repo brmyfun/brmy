@@ -34,7 +34,7 @@
             <div
               v-for="tag in allTypes[activeTabKey]"
               :key="tag.id"
-              :class="{ active: tag.id == activeTagId }"
+              :class="{ active: tag.id == activeTag.id }"
               @click="onTagClick(tag)"
             >
               <TagOutlined /> <span>{{ tag.name }}</span>
@@ -45,16 +45,26 @@
     </a-col>
     <a-col :span="4"></a-col>
   </a-row>
+
+  <a-row>
+    <a-col :span="4"></a-col>
+    <a-col :span="16">
+      <RankItem v-if="activeTag" :tag="activeTag" />
+    </a-col>
+    <a-col :span="4"></a-col>
+  </a-row>
 </template>
 <script>
 import { hotRank, hotRankList, hotRankType } from "../api/api";
 import { DownOutlined, UpOutlined, TagOutlined } from "@ant-design/icons-vue";
+import RankItem from "../components/RankItem.vue";
 export default {
   name: "RankContent",
   components: {
     DownOutlined,
     UpOutlined,
     TagOutlined,
+    RankItem,
   },
   data() {
     return {
@@ -62,7 +72,7 @@ export default {
       tabList: [],
       activeTabKey: null,
       tagExpand: true,
-      activeTagId: null,
+      activeTag: null,
     };
   },
   mounted() {
@@ -80,7 +90,7 @@ export default {
             return b.length - a.length;
           });
           this.activeTabKey = this.tabList[0].key;
-          this.activeTagId = res.Data[this.activeTabKey][0].id;
+          this.activeTag = res.Data[this.activeTabKey][0];
           this.allTypes = res.Data;
         }
       })
@@ -88,32 +98,17 @@ export default {
         console.log(err);
       });
   },
-  watch: {
-    activeTagId(newVal, oldVal) {
-      console.log(newVal);
-      hotRankList({
-        id: newVal,
-        page: 0,
-      })
-        .then((res) => {
-          console.log(res.Data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-  },
   methods: {
     onTabChange(key) {
       console.log(key);
       this.activeTabKey = key;
-      this.activeTagId = this.allTypes[key][0].id;
+      this.activeTag = this.allTypes[key][0];
     },
     changeExpand() {
       this.tagExpand = !this.tagExpand;
     },
     onTagClick(tag) {
-      this.activeTagId = tag.id;
+      this.activeTag = tag;
     },
   },
 };
