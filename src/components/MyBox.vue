@@ -1,5 +1,5 @@
 <template>
-  <a-card>
+  <a-card :bordered="false">
     <a-card-grid class="list-item">
       <a-row>
         <a-col class="list-menu" :span="20">
@@ -62,6 +62,7 @@ export default {
 
 .list-item {
   width: 100%;
+  padding: 18px;
   cursor: pointer;
 }
 

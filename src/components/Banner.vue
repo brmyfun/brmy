@@ -65,6 +65,7 @@ export default {
 }
 
 .bg-content {
+  border-radius: 4px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
 
