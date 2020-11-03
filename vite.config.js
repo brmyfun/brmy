@@ -11,5 +11,10 @@ export default {
             changeOrigin: true,
             rewrite: path => path.replace(/^\/api\/tophub/, '')
         }
+    },
+    optimizeDeps: {
+        include: [
+            'ant-design-vue/es/locale/zh_CN'
+        ]
     }
 }

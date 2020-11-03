@@ -7,13 +7,13 @@
     </a-col>
     <a-col :span="5">
       <a-row class="sider-row">
-        <a-col>
+        <a-col :span="24">
           <ToolBox></ToolBox>
         </a-col>
       </a-row>
 
       <a-row class="sider-row">
-        <a-col>
+        <a-col :span="24">
           <MyBox></MyBox>
         </a-col>
       </a-row>
@@ -25,7 +25,7 @@
       </a-row>
 
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <div class="wechat"></div>
         </a-col>
       </a-row>

@@ -7,8 +7,9 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^5.1.5",
-    "ant-design-vue": "^2.0.0-beta.10",
+    "ant-design-vue": "^2.0.0-beta.13",
     "axios": "^0.20.0",
+    "moment": "^2.29.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.13",
     "wangeditor": "^4.0.2"

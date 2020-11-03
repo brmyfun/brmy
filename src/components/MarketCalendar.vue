@@ -1,0 +1,38 @@
+<template>
+  <a-row>
+    <a-col :span="12">
+      <div
+        :style="{
+          border: '1px solid #d9d9d9',
+          borderRadius: '4px',
+          marginLeft: '12px',
+        }"
+      >
+        <a-calendar
+          v-model:value="value"
+          :fullscreen="false"
+          @panelChange="onPanelChange"
+        />
+      </div>
+    </a-col>
+    <a-col :span="12"></a-col>
+  </a-row>
+</template>
+<script>
+import moment from "moment";
+// import "moment/locale/zh-cn";
+export default {
+  name: "MarketCalendar",
+  data() {
+    return {
+      value: moment("2017-01-25"),
+      moment,
+    };
+  },
+  methods: {
+    onPanelChange(value, mode) {
+      console.log(value, mode);
+    },
+  },
+};
+</script>

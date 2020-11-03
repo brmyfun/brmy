@@ -17,7 +17,7 @@
   background: #fff;
   color: #0d1a26;
   min-height: 480px;
-  line-height: 120px;
+  /* line-height: 120px; */
 }
 
 #app>.ant-layout {

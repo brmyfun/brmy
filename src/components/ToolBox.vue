@@ -2,7 +2,7 @@
   <a-card>
     <a-card-grid class="tool-item">
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <svg viewBox="0 0 1024 1024" width="32" height="32">
             <path
               d="M418.909091 605.416727v61.742546h60.392727l203.357091-203.543273-61.952-60.229818z"
@@ -20,14 +20,14 @@
         </a-col>
       </a-row>
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <span class="item-text">写文章</span>
         </a-col>
       </a-row>
     </a-card-grid>
     <a-card-grid class="tool-item">
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <svg viewBox="0 0 1024 1024" width="32" height="32">
             <path
               d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z"
@@ -45,14 +45,14 @@
         </a-col>
       </a-row>
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <span class="item-text">写梦语</span>
         </a-col>
       </a-row>
     </a-card-grid>
     <a-card-grid class="tool-item">
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <svg viewBox="0 0 1024 1024" width="32" height="32">
             <path
               d="M0 512C0 794.760533 229.239467 1024 512 1024S1024 794.760533 1024 512 794.760533 0 512 0 0 229.239467 0 512z"
@@ -70,7 +70,7 @@
         </a-col>
       </a-row>
       <a-row>
-        <a-col>
+        <a-col :span="24">
           <span class="item-text">草稿箱</span>
         </a-col>
       </a-row>
