@@ -8,25 +8,35 @@
           marginLeft: '12px',
         }"
       >
-        <a-calendar
+        <a-config-provider :locale="locale">
+          <a-calendar
+            v-model:value="value"
+            :fullscreen="false"
+            @panelChange="onPanelChange"
+          />
+        </a-config-provider>
+        <!-- <a-calendar
           v-model:value="value"
           :fullscreen="false"
           @panelChange="onPanelChange"
-        />
+        /> -->
       </div>
     </a-col>
     <a-col :span="12"></a-col>
   </a-row>
 </template>
 <script>
+import locale from "ant-design-vue/es/locale/zh_CN";
 import moment from "moment";
 // import "moment/locale/zh-cn";
+// moment.locale("zh-cn");
 export default {
   name: "MarketCalendar",
   data() {
     return {
-      value: moment("2017-01-25"),
+      locale,
       moment,
+      value: "",
     };
   },
   methods: {
