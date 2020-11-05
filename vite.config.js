@@ -14,7 +14,8 @@ export default {
     },
     optimizeDeps: {
         include: [
-            'ant-design-vue/es/locale/zh_CN'
+            'ant-design-vue/es/locale/zh_CN',
+            'moment/locale/zh-cn'
         ]
     }
 }
