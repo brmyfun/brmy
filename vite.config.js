@@ -10,6 +10,11 @@ export default {
             target: 'https://www.tophub.fun:8888/',
             changeOrigin: true,
             rewrite: path => path.replace(/^\/api\/tophub/, '')
+        },
+        '/api/xmt': {
+            target: 'https://calendar.xmt.cn/api/',
+            changeOrigin: true,
+            rewrite: path => path.replace(/^\/api\/xmt/, '')
         }
     },
     optimizeDeps: {
