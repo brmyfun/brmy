@@ -4,9 +4,7 @@
       <img alt="example" src="../assets/bg-profile.jpg" />
     </template>
     <div class="card-body">
-      <img
-        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-      />
+      <img src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg" />
       <div class="name">白日梦语</div>
       <div class="description">爱做梦的蓝孩子运气都不会太差</div>
       <div class="location">

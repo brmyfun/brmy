@@ -42,7 +42,7 @@
         <div style="height: 100%; width: 40px; cursor: pointer">
           <a-avatar
             size="large"
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg"
           />
         </div>
       </a-popover>
