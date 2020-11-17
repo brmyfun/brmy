@@ -60,6 +60,12 @@ import {
 import UserDropdownMenu from "../components/UserDropdownMenu.vue";
 export default {
   name: "Navigation",
+  props: {
+    selectedKeys: {
+      type: Array,
+      required: true,
+    },
+  },
   components: {
     DownOutlined,
     UserOutlined,
@@ -69,7 +75,8 @@ export default {
   },
   data() {
     return {
-      selectedKeys: ["HomeContent"],
+      // selectedKeys: ["HomeContent"],
+      // selectedKeys: [""],
       visible: false,
     };
   },

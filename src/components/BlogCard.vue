@@ -5,6 +5,7 @@
     :bodyStyle="{ padding: '8px' }"
     v-for="article in articles"
     :key="article.id"
+    @click="onBlogClick(article.id)"
   >
     <div class="blog-card">
       <div class="blog-cover">
@@ -67,6 +68,13 @@ export default {
     return {
       loading: false,
     };
+  },
+  methods: {
+    onBlogClick(articleId) {
+      this.$router.push({
+        path: `/article/${articleId}`,
+      });
+    },
   },
 };
 </script>

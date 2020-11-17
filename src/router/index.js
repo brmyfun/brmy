@@ -7,39 +7,39 @@ const routes = [
         path: "/",
         name: "MainContent",
         component: () => import('../views/MainContent.vue'),
-        children:[
+        children: [
             {
-                path:"home",
+                path: "home",
                 name: "HomeContent",
                 component: () => import('../views/HomeContent.vue'),
             },
             {
-                path:"brmy",
+                path: "brmy",
                 name: "BrmyContent",
                 component: () => import('../views/BrmyContent.vue'),
             },
             {
-                path:"rank",
+                path: "rank",
                 name: "RankContent",
                 component: () => import('../views/RankContent.vue'),
             },
             {
-                path:"goods",
+                path: "goods",
                 name: "GoodsContent",
                 component: () => import('../views/GoodsContent.vue'),
             },
             {
-                path:"about",
+                path: "about",
                 name: "AboutContent",
                 component: () => import('../views/AboutContent.vue'),
             },
             {
-                path:"my",
+                path: "my",
                 name: "MyContent",
                 component: () => import('../views/MyContent.vue'),
             },
             {
-                path:"creation",
+                path: "creation",
                 name: "CreationContent",
                 component: () => import('../views/CreationContent.vue'),
             },
@@ -49,6 +49,11 @@ const routes = [
         path: "/write",
         name: "WriteContent",
         component: () => import('../views/WriteContent.vue')
+    },
+    {
+        path: "/article/:id",
+        name: "ArticleV1",
+        component: () => import('../components/ArticleV1.vue')
     }
 ]
 const router = createRouter({

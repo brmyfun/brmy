@@ -1,10 +1,14 @@
 <template>
   <a-layout>
     <a-layout-header>
-      <Navigation ref="navigation" @selectMenu="onSelectMenu" />
+      <Navigation
+        ref="navigation"
+        :selectedKeys="selectedKeys"
+        @selectMenu="onSelectMenu"
+      />
     </a-layout-header>
     <a-layout-content>
-      <div style="margin-top: 12px">
+      <div style="margin-top: 76px">
         <router-view></router-view>
       </div>
     </a-layout-content>
@@ -19,6 +23,7 @@ export default {
   },
   data() {
     return {
+      selectedKeys: ["HomeContent"],
       currentComponent: "HomeContent",
     };
   },
@@ -43,3 +48,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.ant-layout-header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+</style>
