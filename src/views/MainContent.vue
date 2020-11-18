@@ -30,7 +30,11 @@ export default {
     };
   },
   mounted() {
-    this.$refs.navigation.selectedKeys = ["HomeContent"];
+    if (coms.indexOf(this.$route.name) > -1) {
+      this.$refs.navigation.selectedKeys = [this.$route.name];
+    } else {
+      this.$refs.navigation.selectedKeys = [""];
+    }
   },
   methods: {
     onSelectMenu(selectedMenu) {
