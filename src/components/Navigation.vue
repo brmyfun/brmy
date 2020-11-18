@@ -1,9 +1,13 @@
 <template>
   <a-row id="nav" type="flex" align="middle">
     <a-col :span="4" align="right">
-      <router-link to="/home">
-        <img src="../assets/logo.png" height="36" alt="logo" />
-      </router-link>
+      <img
+        src="../assets/logo.png"
+        height="36"
+        alt="logo"
+        style="cursor: pointer"
+        @click="onLogoClick"
+      />
     </a-col>
     <a-col :span="1"></a-col>
     <a-col :span="6" align="left">
@@ -60,12 +64,6 @@ import {
 import UserDropdownMenu from "../components/UserDropdownMenu.vue";
 export default {
   name: "Navigation",
-  props: {
-    selectedKeys: {
-      type: Array,
-      required: true,
-    },
-  },
   components: {
     DownOutlined,
     UserOutlined,
@@ -75,20 +73,20 @@ export default {
   },
   data() {
     return {
-      // selectedKeys: ["HomeContent"],
-      // selectedKeys: [""],
       visible: false,
+      selectedKeys: [""],
     };
   },
   methods: {
     close() {
       this.visible = false;
     },
-    changeSelectedKey(selectedKey) {
-      this.selectedKeys[0] = selectedKey;
-    },
     onSelect(selected) {
       this.selectedKeys[0] = selected.key;
+      this.$emit("selectMenu", this.selectedKeys[0]);
+    },
+    onLogoClick() {
+      this.selectedKeys[0] = "HomeContent";
       this.$emit("selectMenu", this.selectedKeys[0]);
     },
     onCloseUserDropdownMenu(closedMenu) {
@@ -99,15 +97,12 @@ export default {
       this.$emit("selectMenu", this.selectedKeys[0]);
     },
     writeArticle(e) {
-      this.$router.push("/write");
+      this.$router.push({
+        path: "/write",
+      });
     },
   },
   emits: ["selectMenu"],
-  watch: {
-    current(newVal, oldVal) {
-      this.$emit("selectMenu", this.selectedKeys[0]);
-    },
-  },
 };
 </script>
 

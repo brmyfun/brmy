@@ -7,6 +7,10 @@ const routes = [
         path: "/",
         name: "MainContent",
         component: () => import('../views/MainContent.vue'),
+        redirect: {
+            path: "home",
+            name: "HomeContent"
+        },
         children: [
             {
                 path: "home",
@@ -43,6 +47,11 @@ const routes = [
                 name: "CreationContent",
                 component: () => import('../views/CreationContent.vue'),
             },
+            {
+                path: "/article/:id",
+                name: "ArticleContent",
+                component: () => import('../views/ArticleContent.vue')
+            }
         ]
     },
     {
@@ -50,11 +59,6 @@ const routes = [
         name: "WriteContent",
         component: () => import('../views/WriteContent.vue')
     },
-    {
-        path: "/article/:id",
-        name: "ArticleV1",
-        component: () => import('../components/ArticleV1.vue')
-    }
 ]
 const router = createRouter({
     history: createWebHashHistory(process.env.BASE_URL),

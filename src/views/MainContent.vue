@@ -1,11 +1,7 @@
 <template>
   <a-layout>
     <a-layout-header>
-      <Navigation
-        ref="navigation"
-        :selectedKeys="selectedKeys"
-        @selectMenu="onSelectMenu"
-      />
+      <Navigation ref="navigation" @selectMenu="onSelectMenu" />
     </a-layout-header>
     <a-layout-content>
       <div style="margin-top: 76px">
@@ -16,6 +12,13 @@
 </template>
 <script>
 import Navigation from "../components/Navigation.vue";
+const coms = [
+  "HomeContent",
+  "BrmyContent",
+  "RankContent",
+  "GoodsContent",
+  "AboutContent",
+];
 export default {
   name: "MainContent",
   components: {
@@ -23,20 +26,11 @@ export default {
   },
   data() {
     return {
-      selectedKeys: ["HomeContent"],
       currentComponent: "HomeContent",
     };
   },
   mounted() {
-    // 如果当前路由是根目录则选择HomeContent子组件
-    if (this.$route.path === "/") {
-      this.$router.push({
-        name: this.currentComponent,
-      });
-    } else {
-      // 刷新时根据路由信息确定当前子组件,并调用子组件方法改变菜单选项
-      this.$refs.navigation.changeSelectedKey(this.$route.name);
-    }
+    this.$refs.navigation.selectedKeys = ["HomeContent"];
   },
   methods: {
     onSelectMenu(selectedMenu) {
@@ -44,6 +38,13 @@ export default {
       this.$router.push({
         name: this.currentComponent,
       });
+    },
+  },
+  watch: {
+    $route(to, from) {
+      if (coms.indexOf(to.name) === -1) {
+        this.$refs.navigation.selectedKeys = [""];
+      }
     },
   },
 };
