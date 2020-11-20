@@ -46,44 +46,95 @@
       </a-affix>
     </a-col>
     <a-col :span="9">
-      <div class="article-main">
-        <div class="article-title">人家都在补钙，为什么这个花吐钙</div>
-      </div>
-      <div class="article-author">
-        <a-avatar
-          :size="48"
-          src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg"
-        />
+      <div style="height: 1800px">
+        <a-back-top />
+        <div class="article-main">
+          <div class="article-title">人家都在补钙，为什么这个花吐钙</div>
+        </div>
+        <div class="article-author" style="margin-top: 12px">
+          <a-avatar
+            :size="48"
+            src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg"
+          />
 
-        <div style="margin-left: 8px">
-          <div class="author-details">
-            <span class="author-name">白日梦语</span>
-            <a-button type="primary" size="small"> 关注 </a-button>
-          </div>
+          <div style="margin-left: 8px">
+            <div class="author-details">
+              <span class="author-name">白日梦语</span>
+              <a-button type="primary" size="small"> 关注 </a-button>
+            </div>
 
-          <div class="article-details">
-            <span class="article-category">
-              <ReadOutlined />
-              <span class="category-name">语梦录</span>
-            </span>
+            <div class="article-details">
+              <span class="article-category">
+                <ReadOutlined />
+                <span class="category-name">语梦录</span>
+              </span>
 
-            <span>2020-11-20 10:49:31</span>
-            <span>字数：1000</span>
-            <span>阅读：12908</span>
+              <span>2020-11-20 10:49:31</span>
+              <span>字数：1000</span>
+              <span>阅读：12908</span>
+            </div>
           </div>
         </div>
       </div>
     </a-col>
-    <a-col :span="5"></a-col>
+    <a-col :span="5">
+      <div class="article-side">
+        <a-card>
+          <div style="display: flex">
+            <a-avatar
+              :size="48"
+              src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg"
+            />
+
+            <div style="margin-left: 8px">
+              <div class="author-details">
+                <span class="author-name">白日梦语</span>
+                <a-button type="primary" size="small"> 关注 </a-button>
+              </div>
+
+              <div class="article-details">
+                <span>
+                  粉丝数：
+                  <span class="count">1.6万</span>
+                </span>
+                <span>
+                  阅读数：
+                  <span class="count">1.8万</span>
+                </span>
+              </div>
+
+              <div class="article-author" style="margin-top: 12px">
+                <div style="cursor: pointer">
+                  <span>
+                    <MenuFoldOutlined />
+                    <span class="category-details"> 查看目录 </span>
+                  </span>
+                </div>
+
+                <a-divider type="vertical" />
+
+                <div>
+                  <span style="font-size: 12px; font-weight: 100">
+                    来自文集：
+                    <span style="color: #222831"> 语梦录 </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a-card>
+      </div>
+    </a-col>
     <a-col :span="4"></a-col>
   </a-row>
 </template>
 <script>
-import { ReadOutlined } from "@ant-design/icons-vue";
+import { ReadOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
 export default {
   name: "ArticleContent",
   components: {
     ReadOutlined,
+    MenuFoldOutlined,
   },
   data() {
     return {
@@ -182,6 +233,10 @@ export default {
   margin-top: 4px;
 }
 
+.article-side {
+  margin-top: 12px;
+}
+
 .article-title {
   width: 100%;
   font-size: 32px;
@@ -197,8 +252,6 @@ export default {
 .article-author {
   display: flex;
   align-items: center;
-
-  margin-top: 12px;
 }
 
 .author-details {
@@ -240,5 +293,15 @@ export default {
   color: #969696;
   font-size: 10px;
   margin-left: 6px;
+}
+
+.count {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.category-details {
+  font-size: 13px;
+  font-weight: 100;
 }
 </style>
