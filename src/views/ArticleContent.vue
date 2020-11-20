@@ -46,15 +46,45 @@
       </a-affix>
     </a-col>
     <a-col :span="9">
-      <div class="article-main"></div>
+      <div class="article-main">
+        <div class="article-title">人家都在补钙，为什么这个花吐钙</div>
+      </div>
+      <div class="article-author">
+        <a-avatar
+          :size="48"
+          src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg"
+        />
+
+        <div style="margin-left: 8px">
+          <div class="author-details">
+            <span class="author-name">白日梦语</span>
+            <a-button type="primary" size="small"> 关注 </a-button>
+          </div>
+
+          <div class="article-details">
+            <span class="article-category">
+              <ReadOutlined />
+              <span class="category-name">语梦录</span>
+            </span>
+
+            <span>2020-11-20 10:49:31</span>
+            <span>字数：1000</span>
+            <span>阅读：12908</span>
+          </div>
+        </div>
+      </div>
     </a-col>
     <a-col :span="5"></a-col>
     <a-col :span="4"></a-col>
   </a-row>
 </template>
 <script>
+import { ReadOutlined } from "@ant-design/icons-vue";
 export default {
   name: "ArticleContent",
+  components: {
+    ReadOutlined,
+  },
   data() {
     return {
       top: 88,
@@ -118,8 +148,8 @@ export default {
 }
 
 .icon-wrap {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;
@@ -149,6 +179,66 @@ export default {
 }
 
 .article-main {
+  margin-top: 4px;
+}
+
+.article-title {
+  width: 100%;
+  font-size: 32px;
+  color: rgb(38, 38, 38);
+  font-weight: 600;
+  text-align: justify;
+}
+
+.ant-avatar {
+  cursor: pointer;
+}
+
+.article-author {
+  display: flex;
+  align-items: center;
+
   margin-top: 12px;
+}
+
+.author-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.author-name {
+  font-size: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.ant-btn-sm {
+  font-size: 12px;
+}
+
+.article-details {
+  display: flex;
+  color: #969696;
+  font-size: 10px;
+}
+
+.article-details > :not(:last-child) {
+  margin-right: 10px;
+}
+
+.article-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #5c6e91;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.category-name {
+  color: #969696;
+  font-size: 10px;
+  margin-left: 6px;
 }
 </style>
