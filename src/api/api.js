@@ -17,3 +17,7 @@ export const hotRankList = (params) => {
 export const calendarEvents = (params) => {
     return fetch("/xmt/calendar/events", params);
 }
+
+export const hotEvents = () => {
+    return fetch("/hot/weibo/platform/hot/event");
+}

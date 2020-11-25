@@ -1,20 +1,18 @@
 <template>
-  <div class="rank ant-card-bordered" v-if="hotList">
+  <div class="rank ant-card-bordered" v-if="data">
     <div class="rank-title">
-      <h4 style="margin-block: 0">实时热榜</h4>
+      <h4 style="margin-block: 0">{{ hot }}</h4>
       <a href="javascript:void(0);"><span>更多</span></a>
     </div>
 
     <div class="hot-item">
       <ul>
-        <li v-for="(hotItem, index) in hotList" :key="hotItem.uniquekey">
+        <li v-for="(hotItem, index) in data" :key="index">
           <a-row>
             <a-col>
               <p class="overflow-single">
                 <span class="hot-index">{{ index + 1 }}</span>
-                <a :href="hotItem.url" target="_blank" :title="hotItem.title">{{
-                  hotItem.title
-                }}</a>
+                <a :title="hotItem.title">{{ hotItem.title }}</a>
               </p>
             </a-col>
           </a-row>
@@ -24,27 +22,11 @@
   </div>
 </template>
 <script>
-import { hotRank } from "../api/api";
 export default {
-  name: "HotRank",
-  data() {
-    return {
-      hotList: null,
-    };
-  },
-  mounted() {
-    hotRank({
-      key: "6da65d306970802ae407f442f1e54d02",
-      type: "top",
-    })
-      .then((res) => {
-        if (res.result) {
-          this.hotList = res.result.data.slice(0, 5);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  name: "HotCard",
+  props: {
+    hot: String,
+    data: Array,
   },
 };
 </script>

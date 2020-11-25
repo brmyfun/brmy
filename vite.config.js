@@ -15,6 +15,11 @@ export default {
             target: 'https://calendar.xmt.cn/api/',
             changeOrigin: true,
             rewrite: path => path.replace(/^\/api\/xmt/, '')
+        },
+        '/api/hot': {
+            target: 'https://article.xmt.cn/api/',
+            changeOrigin: true,
+            rewrite: path => path.replace(/^\/api\/hot/, '')
         }
     },
     optimizeDeps: {
