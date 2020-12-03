@@ -14,7 +14,7 @@
         style="border-width: 0px; font-size: 15px"
       >
         <a-menu-item key="WriteArticle">写文章</a-menu-item>
-        <a-menu-item key="WriteBrmy">写梦语</a-menu-item>
+        <a-menu-item key="WriteBrmy">发梦语</a-menu-item>
         <a-menu-item key="MaterialLibrary">素材库</a-menu-item>
         <a-menu-item key="DraftBox">草稿箱</a-menu-item>
       </a-menu>
@@ -57,7 +57,7 @@
         <div style="height: 100%; width: 40px; cursor: pointer">
           <a-avatar
             size="large"
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            src="https://ftp.bmp.ovh/imgs/2020/11/a20de4593688b758.jpg"
           />
         </div>
       </a-popover>

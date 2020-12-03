@@ -59,6 +59,11 @@ const routes = [
         name: "WriteContent",
         component: () => import('../views/WriteContent.vue')
     },
+    {
+        path: "/sign",
+        name: "SignContent",
+        component: () => import('../views/SignContent.vue')
+    },
 ]
 const router = createRouter({
     history: createWebHashHistory(process.env.BASE_URL),

@@ -46,7 +46,7 @@
       </a-row>
       <a-row>
         <a-col :span="24">
-          <span class="item-text">写梦语</span>
+          <span class="item-text">发梦语</span>
         </a-col>
       </a-row>
     </a-card-grid>

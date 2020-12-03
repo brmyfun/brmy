@@ -32,7 +32,7 @@
         写文章
         <template v-slot:overlay>
           <a-menu>
-            <a-menu-item key="write-brmy"><EditOutlined />写梦语</a-menu-item>
+            <a-menu-item key="write-brmy"><EditOutlined />发梦语</a-menu-item>
           </a-menu>
         </template>
         <template v-slot:icon><DownOutlined /></template>
