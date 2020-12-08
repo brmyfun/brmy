@@ -7,15 +7,15 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^5.1.5",
-    "ant-design-vue": "^2.0.0-beta.13",
+    "ant-design-vue": "^2.0.0-rc.2",
     "axios": "^0.20.0",
     "moment": "^2.29.1",
-    "vue": "^3.0.2",
-    "vue-router": "^4.0.0-beta.13",
+    "vue": "^3.0.4",
+    "vue-router": "^4.0.1",
     "wangeditor": "^4.5.2"
   },
   "devDependencies": {
-    "vite": "^1.0.0-rc.9",
-    "@vue/compiler-sfc": "^3.0.2"
+    "vite": "^1.0.0-rc.13",
+    "@vue/compiler-sfc": "^3.0.4"
   }
 }
