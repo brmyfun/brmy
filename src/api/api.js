@@ -11,7 +11,7 @@ export const hotRankType = () => {
 }
 
 export const hotRankList = (params) => {
-    return fetch("/tophub/v2/GetAllInfoGzip", params);
+    return fetch("/tophub/GetAllInfoGzip", params);
 }
 
 export const calendarEvents = (params) => {

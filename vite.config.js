@@ -7,7 +7,7 @@ export default {
             rewrite: path => path.replace(/^\/api\/juhe/, '')
         },
         '/api/tophub': {
-            target: 'https://www.tophub.fun:8888/',
+            target: 'https://api.tophub.fun/',
             changeOrigin: true,
             rewrite: path => path.replace(/^\/api\/tophub/, '')
         },

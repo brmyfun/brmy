@@ -1,8 +1,10 @@
 <template>
   <div class="rank ant-card-bordered" v-if="data">
     <div class="rank-title">
-      <h4 style="margin-block: 0">{{ hot }}</h4>
-      <a href="javascript:void(0);"><span>更多</span></a>
+      <h4 style="margin-block: 0" :style="hotStyle">{{ hot }}</h4>
+      <a href="javascript:void(0);"
+        ><span style="font-size: 12px">更多</span></a
+      >
     </div>
 
     <div class="hot-item">
@@ -26,6 +28,7 @@ export default {
   name: "HotCard",
   props: {
     hot: String,
+    hotStyle: Object,
     data: Array,
   },
 };
@@ -44,7 +47,6 @@ export default {
 
 .rank-title h4 {
   margin: 0;
-  color: #ff7e67;
   font-size: 18px;
   font-weight: 700;
 }
@@ -57,6 +59,7 @@ export default {
 
 .hot-item {
   font-size: 14px;
+  color: #8a8a8a;
   text-align: left;
   margin: 0 20px;
 }
@@ -77,6 +80,18 @@ export default {
 
 .hot-item ul li {
   border-top: 1px solid #ebebeb;
+}
+
+.hot-item ul li:nth-child(1) span {
+  color: #ff000c;
+}
+
+.hot-item ul li:nth-child(2) span {
+  color: #ff6500;
+}
+
+.hot-item ul li:nth-child(3) span {
+  color: #ffb100;
 }
 
 .hot-item a {

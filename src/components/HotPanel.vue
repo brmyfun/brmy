@@ -2,15 +2,19 @@
   <div style="margin-top: 12px">
     <a-row type="flex" justify="space-between" :gutter="[12, 12]">
       <a-col :span="8">
-        <HotCard hot="百度" :data="hotBaidu" />
+        <HotCard hot="百度" :hotStyle="{ color: '#0090FE' }" :data="hotBaidu" />
       </a-col>
 
       <a-col :span="8">
-        <HotCard hot="豆瓣" :data="hotDouban" />
+        <HotCard
+          hot="豆瓣"
+          :hotStyle="{ color: '#228A31' }"
+          :data="hotDouban"
+        />
       </a-col>
 
       <a-col :span="8">
-        <HotCard hot="微博" :data="hotWeibo" />
+        <HotCard hot="微博" :hotStyle="{ color: '#FFBD43' }" :data="hotWeibo" />
       </a-col>
     </a-row>
   </div>
